@@ -19,20 +19,20 @@
 
 ```bash
 brew tap aws/tap
-brew install eks-node-viewer
+brew install eks-node-explorer
 ```
 
 #### Manual
 Please either fetch the latest [release](https://github.com/awslabs/eks-node-viewer/releases) or install manually using:
 ```shell
-go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
+go install github.com/awslabs/eks-node-explorer/cmd/eks-node-explorer@latest
 ```
 
 Note: This will install it to your `GOBIN` directory, typically `~/go/bin` if it is unconfigured.
 
 ## Usage
 ```shell
-Usage of ./eks-node-viewer:
+Usage of ./eks-node-explorer:
   -attribution
     	Show the Open Source Attribution
   -context string
@@ -51,23 +51,23 @@ Usage of ./eks-node-viewer:
     	List of comma separated resources to monitor (default "cpu")
   -style string
     	Three color to use for styling 'good','ok' and 'bad' values. These are also used in the gradients displayed from bad -> good. (default "#04B575,#FFFF00,#FF0000")
-  -v	Display eks-node-viewer version
+  -v	Display eks-node-explorer version
   -version
-    	Display eks-node-viewer version
+    	Display eks-node-explorer version
 ```
 
 ### Examples
 ```shell
 # Standard usage
-eks-node-viewer
+eks-node-explorer
 # Karpenter nodes only
-eks-node-viewer --node-selector karpenter.sh/nodepool
+eks-node-explorer --node-selector karpenter.sh/nodepool
 # Display both CPU and Memory Usage
-eks-node-viewer --resources cpu,memory
+eks-node-explorer --resources cpu,memory
 # Display extra labels, i.e. AZ
-eks-node-viewer --extra-labels topology.kubernetes.io/zone
+eks-node-explorer --extra-labels topology.kubernetes.io/zone
 # Sort by CPU usage in descending order
-eks-node-viewer --node-sort=eks-node-viewer/node-cpu-usage=dsc
+eks-node-explorer --node-sort=eks-node-explorer/node-cpu-usage=dsc
 # Specify a particular AWS profile and region
 AWS_PROFILE=myprofile AWS_REGION=us-west-2
 ```

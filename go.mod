@@ -1,4 +1,4 @@
-module github.com/awslabs/eks-node-viewer
+module github.com/cocoaine/eks-node-explorer
 
 go 1.21
 

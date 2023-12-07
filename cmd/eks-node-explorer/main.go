@@ -37,9 +37,9 @@ import (
 
 	"github.com/aws/karpenter-core/pkg/apis/v1beta1"
 
-	"github.com/awslabs/eks-node-viewer/pkg/client"
-	"github.com/awslabs/eks-node-viewer/pkg/model"
-	"github.com/awslabs/eks-node-viewer/pkg/pricing"
+	"github.com/cocoaine/eks-node-explorer/pkg/client"
+	"github.com/cocoaine/eks-node-explorer/pkg/model"
+	"github.com/cocoaine/eks-node-explorer/pkg/pricing"
 )
 
 //go:generate cp -r ../../ATTRIBUTION.md ./
@@ -61,7 +61,7 @@ func main() {
 	}
 
 	if flags.Version {
-		fmt.Printf("eks-node-viewer version %s\n", version)
+		fmt.Printf("eks-node-explorer version %s\n", version)
 		fmt.Printf("commit: %s\n", commit)
 		fmt.Printf("built at: %s\n", date)
 		fmt.Printf("built by: %s\n", builtBy)

@@ -1,4 +1,4 @@
-project_name: eks-node-viewer
+project_name: eks-node-explorer
 
 source:
   enabled: false
@@ -8,8 +8,8 @@ before:
     - go mod download
 
 builds:
-  - binary: eks-node-viewer
-    main: ./cmd/eks-node-viewer
+  - binary: eks-node-explorer
+    main: ./cmd/eks-node-explorer
     targets:
       - linux_amd64
       - linux_arm64
@@ -25,7 +25,7 @@ universal_binaries:
  - replace: true
 
 archives:
-  - id: eks-node-viewer
+  - id: eks-node-explorer
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_

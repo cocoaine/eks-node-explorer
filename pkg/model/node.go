@@ -25,7 +25,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/duration"
 
-	"github.com/awslabs/eks-node-viewer/pkg/pricing"
+	"github.com/cocoaine/eks-node-explorer/pkg/pricing"
 
 	"github.com/aws/karpenter-core/pkg/apis/v1beta1"
 )
@@ -305,12 +305,12 @@ func (n *Node) UpdatePrice(pricing *pricing.Provider) {
 	}
 }
 
-var resourceLabelRe = regexp.MustCompile("eks-node-viewer/node-(.*?)-usage")
+var resourceLabelRe = regexp.MustCompile("eks-node-explorer/node-(.*?)-usage")
 
 // ComputeLabel computes dynamic labels
 func (n *Node) ComputeLabel(labelName string) string {
 	switch labelName {
-	case "eks-node-viewer/node-age":
+	case "eks-node-explorer/node-age":
 		return duration.HumanDuration(time.Since(n.Created()))
 	}
 	// resource based custom labels

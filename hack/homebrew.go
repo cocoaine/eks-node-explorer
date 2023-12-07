@@ -20,7 +20,7 @@ type Data struct {
 }
 
 // Example Usage:
-// go run hack/homebrew.go --version 0.6.0 > ../aws-homebrew-tap/bottle-configs/eks-node-viewer.json
+// go run hack/homebrew.go --version 0.6.0 > ../aws-homebrew-tap/bottle-configs/eks-node-explorer.json
 
 func main() {
 	var data Data
@@ -31,11 +31,11 @@ func main() {
 	}
 
 	bconfig, err := template.New("bottle-config").Parse(`{
-    "name": "eks-node-viewer",
+    "name": "eks-node-explorer",
     "version": "{{.Version}}",
-    "bin": "eks-node-viewer",
+    "bin": "eks-node-explorer",
     "bottle": {
-        "root_url": "https://github.com/awslabs/eks-node-viewer/releases/download/v{{.Version}}/eks-node-viewer",
+        "root_url": "https://github.com/awslabs/eks-node-explorer/releases/download/v{{.Version}}/eks-node-explorer",
         "sha256": {
             "sierra": "{{.DarwinAll}}",
             "linux": "{{.LinuxX64}}",

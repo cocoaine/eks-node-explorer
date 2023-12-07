@@ -20,7 +20,7 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/awslabs/eks-node-viewer/pkg/model"
+	"github.com/cocoaine/eks-node-explorer/pkg/model"
 )
 
 func testNode(name string) *v1.Node {
