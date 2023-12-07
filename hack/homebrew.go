@@ -35,7 +35,7 @@ func main() {
     "version": "{{.Version}}",
     "bin": "eks-node-explorer",
     "bottle": {
-        "root_url": "https://github.com/awslabs/eks-node-explorer/releases/download/v{{.Version}}/eks-node-explorer",
+        "root_url": "https://github.com/cocoaine/eks-node-explorer/releases/download/v{{.Version}}/eks-node-explorer",
         "sha256": {
             "sierra": "{{.DarwinAll}}",
             "linux": "{{.LinuxX64}}",
@@ -49,7 +49,7 @@ func main() {
 	}
 
 	// fetch and parse the checksums
-	req, err := http.Get(fmt.Sprintf(`https://github.com/awslabs/eks-node-viewer/releases/download/v%s/eks-node-viewer_%s_sha256_checksums.txt`, data.Version, data.Version))
+	req, err := http.Get(fmt.Sprintf(`https://github.com/cocoaine/eks-node-viewer/releases/download/v%s/eks-node-viewer_%s_sha256_checksums.txt`, data.Version, data.Version))
 	if err != nil {
 		log.Fatalf("fetching checksums, %s", err)
 	}
