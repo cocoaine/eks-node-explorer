@@ -48,7 +48,7 @@ import (
 var attribution string
 
 func handleExit() {
-	rawModeOff := exec.Command("/bin/stty", "-raw", "echo")
+	rawModeOff := exec.Command("/bin/sh", "-c", "/bin/stty -raw echo; clear")
 	rawModeOff.Stdin = os.Stdin
 	_ = rawModeOff.Run()
 	_ = rawModeOff.Wait()
