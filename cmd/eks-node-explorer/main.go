@@ -21,6 +21,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -46,7 +47,16 @@ import (
 //go:embed ATTRIBUTION.md
 var attribution string
 
+func handleExit() {
+	rawModeOff := exec.Command("/bin/stty", "-raw", "echo")
+	rawModeOff.Stdin = os.Stdin
+	_ = rawModeOff.Run()
+	_ = rawModeOff.Wait()
+}
+
 func main() {
+	defer handleExit()
+
 	flags, err := ParseFlags()
 	if err != nil {
 		if errors.Is(err, flag.ErrHelp) {
